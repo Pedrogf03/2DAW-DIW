@@ -1,0 +1,113 @@
+/*body {
+    background-color: bisque;
+}
+h1 {
+    color: darkorchid;
+    background-color: darkgray;
+}
+ol li {
+    color: deeppink;
+}
+li {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p > span {
+    color: green;
+}
+p + p {
+    color: mediumspringgreen;
+}
+
+.clase1 {
+    font-size: 2em;
+}
+
+p.clase1 {
+    font-family: monospace;
+}
+
+.clase2,
+.clase3 {
+    font-variant: small-caps;
+}
+#primerParrafo {
+    text-decoration: underline;
+}
+a {
+    color: teal;
+    font-size: 3em;
+}
+a[href='2'] {
+    color: violet;
+}
+a[href$='.com'] {
+    color: crimson;
+}
+a[href^='el'] {
+    color: darksalmon;
+}
+a[href*='4'] {
+    color: yellowgreen;
+}
+p[class~='clase'] {
+    color: palevioletred;
+}
+ul.listado li:first-child {
+    color: pink;
+}
+ul.listado li:nth-child(even) {
+    color: deepskyblue;
+}
+ul.listado li:nth-child(odd) {
+    color: orange;
+}
+ul.listado li:last-child {
+    color: lightseagreen;
+}
+ul.listado li:nth-child(3) {
+    color: blueviolet;
+}
+em span:only-child {
+    color: red;
+}
+.ordenado li:first-of-type {
+    color: lightseagreen;
+}
+.ordenado li:last-of-type {
+    color: mediumpurple;
+}
+.ordenado li:nth-last-of-type(3) {
+    color: goldenrod;
+}
+.ordenado li:nth-last-of-type(2) {
+    color: lightcoral;
+}
+.ordenado :not(li) {
+    color: rosybrown;
+    font-size: 0.5em;
+} 
+ul a:link {
+    color: blue;
+}
+ul a:visited {
+    color: orange;
+}*/
+ul::before {
+  content: 'A';
+}
+p {
+  font-family: 'Blackout', sans-serif;
+  word-spacing: 10px;
+  letter-spacing: 10px;
+}
+.degradado {
+  width: 100%;
+  height: 300px;
+  border: solid black 1px;
+  background: radial-gradient(closest-corner at 30%, peru, pink);
+}
+@font-face {
+  font-family: 'Blackout';
+  src: url('../fonts/Blackout.otf') format('opentype');
+}

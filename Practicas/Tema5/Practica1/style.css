@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+  --li-height: 70px; /* Alto de los elementos de las listas */
+  --li-width: 200px; /* Ancho de los elementos de las listas */
+  --a-padd: 12px; /* Padding de los enlaces dentro de los elementos de las listas */
+
+  /* Colores */
+  --color-white: #fff;
+  --color-black: #2e0404;
+  --color-red: #dc143c;
+}
+
+/* Estilo general de la barra de navegación */
+nav {
+  height: var(--li-height);
+  background-color: var(--color-red);
+  min-width: calc(var(--li-width) * 5); /* El ancho minimo es la suma del ancho de cada li presente en el menu */
+  z-index: 1;
+  position: relative;
+}
+nav ul li {
+  text-align: center;
+  float: left;
+  list-style-type: none;
+  width: var(--li-width);
+  height: var(--li-height);
+  color: var(--color-white);
+  background-color: var(--color-red);
+}
+nav ul li p {
+  font-size: 2rem;
+}
+nav ul li a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: var(--color-white);
+  padding: var(--a-padd);
+  text-decoration: none;
+  transition: background-color 0.5s;
+}
+nav ul li a:hover {
+  background-color: var(--color-black);
+}
+nav ul.main ul {
+  display: none;
+}
+
+/* Estilo general de todos los menús desplegables */
+nav ul li:hover > ul {
+  display: block;
+}
+nav ul ul:hover {
+  display: block;
+}
+nav ul ul {
+  float: left;
+  position: absolute;
+  width: var(--li-width);
+}
+nav ul ul p {
+  font-size: 1.5rem;
+}
+nav ul ul li {
+  text-align: left;
+}
+nav ul ul a {
+  padding: calc(var(--a-padd) * 1.5) calc(var(--a-padd) * 2);
+}
+
+/* Desplazamiento horizontal de los menús desplegables dentro de feelings */
+nav ul.feelings ul {
+  left: var(--li-width);
+}
+
+/* Desplazamiento vertical de los menús desplegables dentro de feelings */
+nav ul.positive,
+nav ul.simple {
+  top: 0;
+}
+nav ul.neutral,
+nav ul.complex {
+  top: var(--li-height);
+}
+nav ul.negative {
+  top: calc(var(--li-height) * 2);
+}
+
+/* Fondo */
+div.content {
+  height: calc(100vh - var(--li-height));
+  background: center url(background.jpg);
+  width: 100vw;
+  min-width: calc(var(--li-width) * 5); /* El ancho minimo es la suma del ancho de cada li presente en el menu */
+  overflow-x: hidden;
+}
+/* Título */
+div.content h1 {
+  color: var(--color-white);
+  position: relative;
+  text-align: center;
+  top: 200px;
+  font-size: 5em;
+  width: 90%;
+  margin: 0 auto;
+  font-family: 'Suez One', serif;
+}
+/* Texto */
+div.content p {
+  color: var(--color-white);
+  position: relative;
+  text-align: center;
+  top: 300px;
+  font-size: 2.5em;
+  width: 90%;
+  margin: 0 auto;
+}
+/* Fuente del menú y el texto */
+p,
+li {
+  font-family: 'KoHo', sans-serif;
+}

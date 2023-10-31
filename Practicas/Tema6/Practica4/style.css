@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  /* font-family: 'Inconsolata', monospace;
+  font-family: 'Roboto Mono', monospace; */
+}
+
+/* COLORES */
+:root {
+  --f-color: #f2f5ea;
+  --bg-color: #2c363f;
+  --front-dev: #0496ff;
+  --front-dev-dark: #0065ad;
+  --back-dev: #3e885b;
+  --back-dev-dark: #04652b;
+  --ui-dev: #ffbc42;
+  --ui-dev-dark: #fda500;
+  --engineer: #d81159;
+  --engineer-dark: #ad003f;
+}
+
+body {
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='59.428' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(76, 35%, 94%, 1)'/><path d='M0 70.975V47.881m20-1.692L8.535 52.808v13.239L20 72.667l11.465-6.62V52.808zm0-32.95l11.465-6.62V-6.619L20-13.24 8.535-6.619V6.619L20 13.24m8.535 4.927v13.238L40 38.024l11.465-6.62V18.166L40 11.546zM20 36.333L0 47.88m0 0v23.094m0 0l20 11.548 20-11.548V47.88m0 0L20 36.333m0 0l20 11.549M0 11.547l-11.465 6.619v13.239L0 38.025l11.465-6.62v-13.24L0 11.548v-23.094l20-11.547 20 11.547v23.094M20 36.333V13.24'  stroke-linecap='square' stroke-width='4.5' stroke='hsla(208, 18%, 21%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,-237.712)' fill='url(%23a)'/></svg>");
+}
+
+main {
+  width: 95%;
+  margin: 0 auto;
+  background-color: #272932de;
+  padding: 3%;
+}
+main h1 {
+  text-align: center;
+  color: var(--f-color);
+  font-family: 'Inconsolata', monospace;
+  font-size: 4em;
+}
+
+.cards-container {
+  display: flex;
+  flex-flow: column;
+  row-gap: 25px;
+  margin-top: 3%;
+}
+
+.cards-container > div {
+  display: flex;
+  flex-flow: row wrap;
+  row-gap: 25px;
+  column-gap: 3%;
+  justify-content: space-between;
+}
+
+.cards-container > div .front {
+  flex: 1 0 70%;
+  min-width: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+.cards-container > div .front > div {
+  width: 48%;
+  background-color: var(--front-dev);
+}
+
+.cards-container > div .ui {
+  flex: 1 0 25%;
+  min-width: 400px;
+  display: flex;
+  justify-content: center;
+}
+.cards-container > div .ui div {
+  width: 100%;
+  background-color: var(--ui-dev);
+}
+
+.cards-container > div .engineer {
+  flex: 1 0 25%;
+  min-width: 400px;
+  display: flex;
+  justify-content: center;
+}
+.cards-container > div .engineer div {
+  width: 100%;
+  background-color: var(--engineer);
+}
+
+.cards-container > div .back {
+  flex: 1 0 70%;
+  min-width: 800px;
+  display: flex;
+  column-gap: 15px;
+  justify-content: space-between;
+}
+.cards-container > div .back > div {
+  width: 48%;
+  background-color: var(--back-dev);
+}
+
+.cards-container > div > div > div {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 20px;
+  transition: all 0.75s;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+}
+
+@keyframes anim1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.cards-container > div > .front > div:first-child {
+  animation: anim1 1s 0.5s forwards;
+}
+.cards-container > div > .front > div:last-child {
+  animation: anim1 1s 1s forwards;
+}
+.cards-container > div > .ui > div {
+  animation: anim1 1s 1.5s forwards;
+}
+.cards-container > div > .engineer > div {
+  animation: anim1 1s 2s forwards;
+}
+.cards-container > div > .back > div:first-child {
+  animation: anim1 1s 2.5s forwards;
+}
+.cards-container > div > .back > div:last-child {
+  animation: anim1 1s 3s forwards;
+}
+
+.cards-container > div > div > div:hover {
+  border-radius: 20px;
+  transform: scale(1.05);
+  border: 3px solid var(--f-color);
+}
+.cards-container > div > div > div .circle {
+  width: 100%;
+  height: 70%;
+  border-radius: 50%;
+  height: width;
+  position: absolute;
+  top: -40%;
+  z-index: -1;
+  transform: rotateX(-90deg);
+  transition: transform 1s;
+  border: 3px solid var(--f-color);
+}
+.cards-container > div > div > div:hover .circle {
+  transform: rotateX(0deg);
+}
+.cards-container > div > div > div img {
+  border-radius: 50%;
+  width: 40%;
+  border: 3px solid var(--f-color);
+  transition: all 1s;
+}
+.cards-container > div > div > div:hover img {
+  transform: scale(1.1);
+}
+.cards-container > div > div > div :is(h2, h3, p) {
+  font-family: 'Roboto Mono', monospace;
+  color: var(--f-color);
+  text-align: justify;
+}
+.cards-container > div > div > div hr {
+  width: 0;
+  opacity: 0;
+  color: var(--f-color);
+  transition: width 1s, opacity 1s;
+}
+.cards-container > div > div > div:hover hr {
+  width: 75%;
+  opacity: 1;
+  color: var(--f-color);
+}
+.cards-container > div > div > div h2 {
+  font-size: 2em;
+}
+.cards-container > div > div > div h3 {
+  font-size: 1.5em;
+}
+.cards-container > div > div > div p {
+  font-size: 1em;
+  width: 75%;
+}
+.cards-container > div > div > div .icons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 1s;
+}
+.cards-container > div > div > div:hover .icons {
+  transform: rotateX(0deg);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.cards-container > div > div > div .icons i {
+  font-size: 4em;
+  padding: 10px;
+  text-shadow: 2px 2px 2px var(--bg-color), -2px 2px 2px var(--bg-color), 2px -2px 2px var(--bg-color), -2px -2px 2px var(--bg-color);
+  transition: all 1s;
+}
+.cards-container > div > div > div .icons i:hover {
+  transform: scale(1.1);
+  text-shadow: 2px 2px 2px var(--f-color), -2px 2px 2px var(--f-color), 2px -2px 2px var(--f-color), -2px -2px 2px var(--f-color);
+}
+
+.cards-container > div > .front > div .icons {
+  background-color: var(--front-dev-dark);
+  color: var(--front-dev);
+}
+.cards-container > div > .front > div .icons a {
+  color: var(--front-dev);
+  transition: all 0.75s;
+}
+.cards-container > div > .front > div .icons a:hover {
+  color: var(--front-dev-dark);
+  background-color: var(--front-dev);
+}
+.cards-container > div > .front > div .circle {
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='34.129' height='45' patternTransform='scale(2) rotate(90)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(205, 100%, 51%, 1)'/><path d='M2.51 1.597A23.682 23.682 0 000 1.72v32.65c2.18-2 4.176-4.072 5.844-5.915 3.188-3.523 9.14-2.133 10.242 2.488a5.048 5.048 0 01-.467 3.649c-1.5 2.829-3.843 2.848-5.616 2.316-1.343-.403-2.579.882-2.085 2.193.878 2.334 3.46 4.9 10.724 4.18 5.05-.5 10.712-4.53 15.487-8.911V1.72c-7.355.728-16.01 8.948-21.33 14.827-3.188 3.522-9.14 2.133-10.242-2.489a5.05 5.05 0 01.466-3.648C4.525 7.58 6.867 7.56 8.64 8.092c1.342.403 2.578-.88 2.085-2.192-.77-2.042-2.842-4.262-8.214-4.303z'  stroke-width='1' stroke='none' fill='hsla(205, 100%, 34%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+}
+
+.cards-container > div > .ui > div .icons {
+  background-color: var(--ui-dev-dark);
+  color: var(--ui-dev);
+}
+.cards-container > div > .ui > div .icons a {
+  color: var(--ui-dev);
+  transition: all 0.75s;
+}
+.cards-container > div > .ui > div .icons a:hover {
+  color: var(--ui-dev-dark);
+  background-color: var(--ui-dev);
+}
+.cards-container > div > .ui > div .circle {
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='34.129' height='45' patternTransform='scale(2) rotate(90)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(39, 100%, 63%, 1)'/><path d='M2.51 1.597A23.682 23.682 0 000 1.72v32.65c2.18-2 4.176-4.072 5.844-5.915 3.188-3.523 9.14-2.133 10.242 2.488a5.048 5.048 0 01-.467 3.649c-1.5 2.829-3.843 2.848-5.616 2.316-1.343-.403-2.579.882-2.085 2.193.878 2.334 3.46 4.9 10.724 4.18 5.05-.5 10.712-4.53 15.487-8.911V1.72c-7.355.728-16.01 8.948-21.33 14.827-3.188 3.522-9.14 2.133-10.242-2.489a5.05 5.05 0 01.466-3.648C4.525 7.58 6.867 7.56 8.64 8.092c1.342.403 2.578-.88 2.085-2.192-.77-2.042-2.842-4.262-8.214-4.303z'  stroke-width='1' stroke='none' fill='hsla(39, 100%, 50%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+}
+
+.cards-container > div > .engineer > div .icons {
+  background-color: var(--engineer-dark);
+  color: var(--engineer);
+}
+.cards-container > div > .engineer > div .icons a {
+  color: var(--engineer);
+  transition: all 0.75s;
+}
+.cards-container > div > .engineer > div .icons a:hover {
+  color: var(--engineer-dark);
+  background-color: var(--engineer);
+}
+.cards-container > div > .engineer > div .circle {
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='34.129' height='45' patternTransform='scale(2) rotate(90)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(338, 85%, 46%, 1)'/><path d='M2.51 1.597A23.682 23.682 0 000 1.72v32.65c2.18-2 4.176-4.072 5.844-5.915 3.188-3.523 9.14-2.133 10.242 2.488a5.048 5.048 0 01-.467 3.649c-1.5 2.829-3.843 2.848-5.616 2.316-1.343-.403-2.579.882-2.085 2.193.878 2.334 3.46 4.9 10.724 4.18 5.05-.5 10.712-4.53 15.487-8.911V1.72c-7.355.728-16.01 8.948-21.33 14.827-3.188 3.522-9.14 2.133-10.242-2.489a5.05 5.05 0 01.466-3.648C4.525 7.58 6.867 7.56 8.64 8.092c1.342.403 2.578-.88 2.085-2.192-.77-2.042-2.842-4.262-8.214-4.303z'  stroke-width='1' stroke='none' fill='hsla(338, 100%, 34%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+}
+
+.cards-container > div > .back > div .icons {
+  background-color: var(--back-dev-dark);
+  color: var(--back-dev);
+}
+.cards-container > div > .back > div .icons a {
+  color: var(--back-dev);
+  transition: all 0.75s;
+}
+.cards-container > div > .back > div .icons a:hover {
+  color: var(--back-dev-dark);
+  background-color: var(--back-dev);
+}
+.cards-container > div > .back > div .circle {
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='34.129' height='45' patternTransform='scale(2) rotate(90)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(144, 37%, 39%, 1)'/><path d='M2.51 1.597A23.682 23.682 0 000 1.72v32.65c2.18-2 4.176-4.072 5.844-5.915 3.188-3.523 9.14-2.133 10.242 2.488a5.048 5.048 0 01-.467 3.649c-1.5 2.829-3.843 2.848-5.616 2.316-1.343-.403-2.579.882-2.085 2.193.878 2.334 3.46 4.9 10.724 4.18 5.05-.5 10.712-4.53 15.487-8.911V1.72c-7.355.728-16.01 8.948-21.33 14.827-3.188 3.522-9.14 2.133-10.242-2.489a5.05 5.05 0 01.466-3.648C4.525 7.58 6.867 7.56 8.64 8.092c1.342.403 2.578-.88 2.085-2.192-.77-2.042-2.842-4.262-8.214-4.303z'  stroke-width='1' stroke='none' fill='hsla(144, 92%, 21%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+}

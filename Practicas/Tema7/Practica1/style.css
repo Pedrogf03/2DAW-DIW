@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 100px;
+  background-color: #1d1d1d;
+  background-image: url('fondo.png');
+}
+
+div.calendar {
+  margin: 0 auto;
+  width: 40%;
+  min-width: 480px;
+  background-color: #f1ffe7;
+  background-image: url('calendar.png');
+  padding: 10px;
+  box-shadow: 5px 5px 5px #1d1d1d;
+  border-radius: 20px;
+  border: 5px solid #1d1d1d;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 60px 5fr;
+}
+div.calendar h1 {
+  font-family: 'Abril Fatface', cursive;
+  color: #32a287;
+  text-align: center;
+  place-self: center;
+  font-size: 4em;
+}
+div.days {
+  margin-top: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  align-items: center;
+  align-content: start;
+}
+div.days div {
+  cursor: default;
+  height: 50px;
+  font-size: 1.5em;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  padding-top: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #1d1d1d;
+  background-color: #a9fdac;
+  transition: color 0.75s, background-color 0.75s;
+}
+div.days div.week {
+  background-color: #32a287;
+}
+div.days div:nth-child(8) {
+  grid-column-start: 6;
+}
+div.days div.end {
+  background-color: #931621;
+  color: #f1ffe7;
+}
+div.days div.festivo {
+  background-color: #44cf6c;
+}
+div.days div:nth-last-child(1) {
+  grid-row-start: 9;
+  grid-column: 6 / span 2;
+  font-size: 1.2em;
+  padding-top: 14px;
+}
+div.days div:nth-last-child(2) {
+  grid-row-start: 9;
+  grid-column: 3 / span 3;
+  font-size: 1.2em;
+  padding-top: 14px;
+}
+div.days div:nth-last-child(3) {
+  grid-row-start: 9;
+  grid-column: 1 / span 2;
+  font-size: 1.2em;
+  padding-top: 14px;
+}
+div.days div:not(.week, div:nth-last-child(3), div:nth-last-child(2), div:nth-last-child(1)):hover {
+  background-color: #4e050b;
+  color: #da2b39;
+}

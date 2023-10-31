@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estudia informática</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <main class="main">
+      <div class="contenedor_menu icono_barras">
+        <span class=""></span>
+        <span class=""></span>
+        <span class=""></span>
+      </div>
+      <header class="header off">
+        <button class="boton_inicio">Inicio</button>
+        <nav>
+          <button class="boton_smr">SMR</button>
+          <button class="boton_asir">ASIR</button>
+          <button class="boton_daw">Desarrollo Web</button>
+          <button class="boton_dam">Desarrollo Multiplataforma</button>
+          <button class="boton_cib">Ciberseguridad</button>
+          <button class="boton_inicio boton_responsive">Volver al inicio</button>
+        </nav>
+      </header>
+      <section class="lienzoinicio lienzo visible">
+        <div>
+          <h1>C.I.F.P. Nº1, Ceuta</h1>
+          <img src="./img/logo.jpg" />
+          <p>
+            ¿Te apasiona la Informática? Si es así, te invitamos a descubrir los Ciclos Formativos que ofertamos en nuestro Centro. Sin duda podrás encontrar el que más se adapte a
+            tus intereses y comenzar a prepararte para un brillante futuro profesional. Haz clic en el menú de arriba para saber más.
+          </p>
+        </div>
+      </section>
+      <section class="lienzosmr lienzo invisible">
+        <div>
+          <h1>Sistemas Microinformáticos y Redes</h1>
+          <img src="./img/foto8.jpg" />
+          <p>
+            El Ciclo Formativo de Grado Medio en Sistemas Microinformáticos y Redes sirve para formar a profesionales expertos en redes informáticas. Podrás por ejemplo
+            diagnosticar disfunciones en sistemas microinformáticos y redes mediante pruebas funcionales. También instalar, configurar y mantener servicios multiusuario,
+            aplicaciones y dispositivos compartidos en un entorno de red local.
+          </p>
+        </div>
+      </section>
+      <section class="lienzoasir lienzo invisible">
+        <div>
+          <h1>Administración de Sistemas Informáticos en Red</h1>
+          <img src="./img/foto9.jpg" />
+          <p>
+            El Ciclo Formativo de Grado Superior en Administración de Sistemas Informáticos en Red es muy completo; podrás trabajar como administrador de sistemas, responsable de
+            Informática, técnico en servicios de Internet, técnico de telecomunicaciones, técnico de mensajería electrónica, técnico en teleasistencia, personal de apoyo y soporte
+            técnico, técnico en administración de base de datos, técnico de redes, técnico en entornos web y supervisor de sistemas.
+          </p>
+        </div>
+      </section>
+      <section class="lienzodaw lienzo invisible">
+        <div>
+          <h1>Desarrollo de Aplicaciones Web</h1>
+          <img src="./img/foto10.jpg" />
+          <p>
+            El Ciclo Formativo Superior en Desarrollo de Aplicaciones Web es la formación que estás buscando si quieres convertirte en programador o desarrollador web. Por ejemplo,
+            un técnico en Desarrollo de Aplicaciones Web puede acabar trabajando como diseñador web, técnico en SEO, especialista en analítica web o desarrollador front end, back
+            end o full stack. Esta es una de las especialidades que prepara a los alumnos para trabajar en las profesiones más nuevas. Hay múltiples salidas laborales.
+          </p>
+        </div>
+      </section>
+      <section class="lienzodam lienzo invisible">
+        <div>
+          <h1>Desarrollo de Aplicaciones Multiplataforma</h1>
+          <img src="./img/foto11.jpg" />
+          <p>
+            En el Ciclo Formativo Superior en Desarrollo de Aplicaciones Multiplataforma se aprende a programar todo tipo de aplicaciones. Los alumnos se forman para ser capaces de
+            dar respuesta a cualquier necesidad, ya sea en PC o móvil. El mundo digital avanza deprisa, las plataformas se optimizan y aparecen nuevos dispositivos. Gracias a la
+            versatilidad del Ciclo, los técnicos pueden trabajar en diferentes campos y plataformas y ofrecer soluciones realmente innovadoras.
+          </p>
+        </div>
+      </section>
+      <section class="lienzocib lienzo invisible">
+        <div>
+          <h1>Curso de Ciberseguridad</h1>
+          <img src="./img/foto12.jpg" />
+          <p>
+            El Curso de Especialización en Ciberseguridad en Entornos de las Tecnologías de la Información, al que podrás acceder después de finalizar cualquier Ciclo de Grado
+            Superior de la Familia Profesional de Informática, es una reciente novedad en nuestro Centro. En él aprenderás todas las tecnologías relacionadas con la Ciberseguridad,
+            como el análisis forense, el hacking ético o el bastionado de sistemas. La ciberseguridad es un sector en alza, por lo que este curso es un gran complemento para tu
+            formación.
+          </p>
+        </div>
+      </section>
+      <footer class="footer"><p>Diseño de Interfaces Web - 2DAW. Ceuta.</p></footer>
+    </main>
+    <script>
+      $(document).ready(function () {
+        $('.boton_inicio').on('click', function () {
+          $(this).parents().find('.lienzoinicio').removeClass('invisible');
+          $(this).parents().find('.lienzosmr').removeClass('visible');
+          $(this).parents().find('.lienzoasir').removeClass('visible');
+          $(this).parents().find('.lienzodaw').removeClass('visible');
+          $(this).parents().find('.lienzodam').removeClass('visible');
+          $(this).parents().find('.lienzocib').removeClass('visible');
+
+          $(this).parents().find('.lienzoinicio').addClass('visible');
+          $(this).parents().find('.lienzosmr').addClass('invisible');
+          $(this).parents().find('.lienzoasir').addClass('invisible');
+          $(this).parents().find('.lienzodaw').addClass('invisible');
+          $(this).parents().find('.lienzodam').addClass('invisible');
+          $(this).parents().find('.lienzocib').addClass('invisible');
+
+          $('.contenedor_menu').addClass('icono_barras');
+          $('.contenedor_menu').removeClass('icono_cruz');
+        });
+
+        $('.boton_smr').on('click', function () {
+          $(this).parents().find('.lienzoinicio').removeClass('visible');
+          $(this).parents().find('.lienzosmr').removeClass('invisible');
+          $(this).parents().find('.lienzoasir').removeClass('visible');
+          $(this).parents().find('.lienzodaw').removeClass('visible');
+          $(this).parents().find('.lienzodam').removeClass('visible');
+          $(this).parents().find('.lienzocib').removeClass('visible');
+
+          $(this).parents().find('.lienzoinicio').addClass('invisible');
+          $(this).parents().find('.lienzosmr').addClass('visible');
+          $(this).parents().find('.lienzoasir').addClass('invisible');
+          $(this).parents().find('.lienzodaw').addClass('invisible');
+          $(this).parents().find('.lienzodam').addClass('invisible');
+          $(this).parents().find('.lienzocib').addClass('invisible');
+
+          $('.contenedor_menu').addClass('icono_barras');
+          $('.contenedor_menu').removeClass('icono_cruz');
+        });
+
+        $('.boton_asir').on('click', function () {
+          $(this).parents().find('.lienzoinicio').removeClass('visible');
+          $(this).parents().find('.lienzosmr').removeClass('visible');
+          $(this).parents().find('.lienzoasir').removeClass('invisible');
+          $(this).parents().find('.lienzodaw').removeClass('visible');
+          $(this).parents().find('.lienzodam').removeClass('visible');
+          $(this).parents().find('.lienzocib').removeClass('visible');
+
+          $(this).parents().find('.lienzoinicio').addClass('invisible');
+          $(this).parents().find('.lienzosmr').addClass('invisible');
+          $(this).parents().find('.lienzoasir').addClass('visible');
+          $(this).parents().find('.lienzodaw').addClass('invisible');
+          $(this).parents().find('.lienzodam').addClass('invisible');
+          $(this).parents().find('.lienzocib').addClass('invisible');
+
+          $('.contenedor_menu').addClass('icono_barras');
+          $('.contenedor_menu').removeClass('icono_cruz');
+        });
+
+        $('.boton_daw').on('click', function () {
+          $(this).parents().find('.lienzoinicio').removeClass('visible');
+          $(this).parents().find('.lienzosmr').removeClass('visible');
+          $(this).parents().find('.lienzoasir').removeClass('visible');
+          $(this).parents().find('.lienzodaw').removeClass('invisible');
+          $(this).parents().find('.lienzodam').removeClass('visible');
+          $(this).parents().find('.lienzocib').removeClass('visible');
+
+          $(this).parents().find('.lienzoinicio').addClass('invisible');
+          $(this).parents().find('.lienzosmr').addClass('invisible');
+          $(this).parents().find('.lienzoasir').addClass('invisible');
+          $(this).parents().find('.lienzodaw').addClass('visible');
+          $(this).parents().find('.lienzodam').addClass('invisible');
+          $(this).parents().find('.lienzocib').addClass('invisible');
+
+          $('.contenedor_menu').addClass('icono_barras');
+          $('.contenedor_menu').removeClass('icono_cruz');
+        });
+
+        $('.boton_dam').on('click', function () {
+          $(this).parents().find('.lienzoinicio').removeClass('visible');
+          $(this).parents().find('.lienzosmr').removeClass('visible');
+          $(this).parents().find('.lienzoasir').removeClass('visible');
+          $(this).parents().find('.lienzodaw').removeClass('visible');
+          $(this).parents().find('.lienzodam').removeClass('invisible');
+          $(this).parents().find('.lienzocib').removeClass('visible');
+
+          $(this).parents().find('.lienzoinicio').addClass('invisible');
+          $(this).parents().find('.lienzosmr').addClass('invisible');
+          $(this).parents().find('.lienzoasir').addClass('invisible');
+          $(this).parents().find('.lienzodaw').addClass('invisible');
+          $(this).parents().find('.lienzodam').addClass('visible');
+          $(this).parents().find('.lienzocib').addClass('invisible');
+
+          $('.contenedor_menu').addClass('icono_barras');
+          $('.contenedor_menu').removeClass('icono_cruz');
+        });
+
+        $('.boton_cib').on('click', function () {
+          $(this).parents().find('.lienzoinicio').removeClass('visible');
+          $(this).parents().find('.lienzosmr').removeClass('visible');
+          $(this).parents().find('.lienzoasir').removeClass('visible');
+          $(this).parents().find('.lienzodaw').removeClass('visible');
+          $(this).parents().find('.lienzodam').removeClass('visible');
+          $(this).parents().find('.lienzocib').removeClass('invisible');
+
+          $(this).parents().find('.lienzoinicio').addClass('invisible');
+          $(this).parents().find('.lienzosmr').addClass('invisible');
+          $(this).parents().find('.lienzoasir').addClass('invisible');
+          $(this).parents().find('.lienzodaw').addClass('invisible');
+          $(this).parents().find('.lienzodam').addClass('invisible');
+          $(this).parents().find('.lienzocib').addClass('visible');
+
+          $('.contenedor_menu').addClass('icono_barras');
+          $('.contenedor_menu').removeClass('icono_cruz');
+        });
+      });
+
+      $('.contenedor_menu').on('click', function () {
+        $(this).toggleClass('icono_cruz icono_barras');
+      });
+
+      $('.lienzo').on('click', function () {
+        $('.contenedor_menu').addClass('icono_barras');
+        $('.contenedor_menu').removeClass('icono_cruz');
+      });
+
+      $('.footer').on('click', function () {
+        $('.contenedor_menu').addClass('icono_barras');
+        $('.contenedor_menu').removeClass('icono_cruz');
+      });
+    </script>
+  </body>
+</html>

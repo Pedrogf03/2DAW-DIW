@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FONDO */
+body {
+  background-color: lightslategrey;
+}
+
+/* CONTENIDO PRINCIPAL */
+main {
+  background-color: darkslategrey;
+  border: 3px solid gainsboro;
+  border-radius: 15px;
+  width: 70%;
+  margin: 1.5vh auto;
+  text-align: center;
+  padding: 15px;
+}
+
+/* TÍTULO */
+h1 {
+  color: gainsboro;
+  font-size: 6em;
+  font-weight: lighter;
+  border-bottom: 5px solid gainsboro;
+  width: 90%;
+  margin: 0 auto;
+  font-family: 'Literata', serif;
+}
+
+/* CONTENEDOR DE LAS CARTAS */
+.contenedor_cartas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: space-around;
+  padding: 3vh 1vw;
+}
+
+/* ESTILOS COMUNES DENTRO DE CADA CARTA */
+.carta {
+  height: 320px;
+  width: 210px;
+  background-color: gainsboro;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 13px 13px 10px #00000080;
+  padding: 5px;
+
+  /* FLEX */
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: space-between;
+  align-content: center;
+}
+.carta p,
+.carta i {
+  color: #312f33;
+  font-family: 'Literata', serif;
+}
+.carta .number {
+  display: flex;
+  flex-direction: column;
+}
+.carta .number:last-child {
+  align-self: flex-end;
+  transform: rotateZ(180deg);
+}
+.carta .icons {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.carta .icons i {
+  font-size: 2.5em;
+}
+
+/* POSICIONES DENTRO DE CADA CARTA */
+
+/* CARTA 1 */
+.carta:nth-child(1) .icons {
+  align-items: center;
+  justify-content: center;
+}
+
+/* CARTA 2 */
+.carta:nth-child(2) .icons {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.carta:nth-child(2) .icons :last-child {
+  transform: rotateZ(180deg);
+}
+
+/* CARTA 3 */
+.carta:nth-child(3) .icons {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.carta:nth-child(3) .icons :last-child {
+  transform: rotateZ(180deg);
+}
+
+/* CARTAS 4, 5, 6, y 8 */
+:is(.carta:nth-child(4), .carta:nth-child(5), .carta:nth-child(6), .carta:nth-child(8)) .icons {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+:is(.carta:nth-child(4), .carta:nth-child(5), .carta:nth-child(6), .carta:nth-child(8)) .icons div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+:is(.carta:nth-child(4), .carta:nth-child(5), .carta:nth-child(6), .carta:nth-child(8)) .icons div:last-child {
+  transform: rotateZ(180deg);
+}
+.carta:nth-child(8) .icons div:nth-child(4) {
+  transform: rotateZ(180deg);
+}
+:is(.carta:nth-child(5), .carta:nth-child(8)) .icons div:nth-child(2),
+.carta:nth-child(8) .icons div:nth-child(4) {
+  align-self: center;
+}
+
+/* CARTAS 7 y 9 */
+:is(.carta:nth-child(7), .carta:nth-child(9)) .icons {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+:is(.carta:nth-child(7), .carta:nth-child(9)) .icons div {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+:is(.carta:nth-child(7), .carta:nth-child(9)) .icons div :last-child,
+.carta:nth-child(9) .icons div :nth-last-child(2) {
+  transform: rotate(180deg);
+}
+:is(.carta:nth-child(7), .carta:nth-child(9)) .icons div:nth-child(2) i {
+  position: relative;
+  top: 63px;
+  transform: none;
+}
+.carta:nth-child(9) .icons div:nth-child(2) i {
+  top: 57px;
+}
+
+/* CARTA 10 */
+.carta:nth-child(10) .icons {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.carta:nth-child(10) .icons div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.carta:nth-child(10) .icons div :last-child,
+.carta:nth-child(10) .icons :is(div:first-child, div:last-child) :nth-last-child(2) {
+  transform: rotate(180deg);
+}
+.carta:nth-child(10) .icons div:nth-child(2) i {
+  position: relative;
+}
+.carta:nth-child(10) .icons div:nth-child(2) i:first-child {
+  top: 57px;
+}
+.carta:nth-child(10) .icons div:nth-child(2) i:last-child {
+  bottom: 57px;
+}

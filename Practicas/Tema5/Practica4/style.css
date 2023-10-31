@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --herocolor: #cb1da0;
+  --fondolanding: #120f0fa3;
+  --textcolor: #d1d1d1;
+  --fondopoema: #1c262b;
+  --fondocruz: #f0f0f055;
+}
+
+body {
+  overflow-x: hidden;
+}
+main {
+  background-image: url('./road.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
+  padding: 15vh 0;
+}
+h2,
+h3 {
+  font-weight: 700;
+}
+h3 {
+  font-size: 2rem;
+}
+
+/*contenedor de las barras del menú hamburguesa*/
+.contenedor_icono_burger {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  z-index: 10;
+}
+
+/*barras menú hamburguesa*/
+.icono_barras span {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 8px;
+  background: var(--herocolor);
+  border-radius: 3px;
+  transition: all 1s;
+}
+
+.icono_cruz span {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 8px;
+  background: var(--herocolor);
+  border-radius: 3px;
+  transition: all 1s;
+}
+.icono_cruz span:nth-child(2) {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 8px;
+  background: var(--herocolor);
+  border-radius: 3px;
+  transform: translateX(-20px);
+  opacity: 0;
+}
+.icono_cruz span:nth-child(1) {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 8px;
+  background-color: var(--textcolor);
+  border-radius: 3px;
+  transform: translateX(-10px) rotateZ(315deg) translateY(18px);
+}
+.icono_cruz span:nth-child(3) {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 8px;
+  background-color: var(--textcolor);
+  border-radius: 3px;
+  transform: translateX(-10px) rotateZ(-315deg) translateY(-18px);
+}
+.contenedor_icono_burger:before {
+  content: '';
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  right: -11px;
+  top: -12px;
+  border: 3px solid var(--textcolor);
+  background-color: #d1d1d180;
+  border-radius: 50%;
+  z-index: 9;
+  width: 50px;
+  height: 50px;
+  opacity: 0%;
+  transition: all 1s;
+}
+.icono_cruz:before {
+  opacity: 100%;
+}
+.icono_cruz {
+  transition: all 1s;
+}
+
+/*panel central landing page*/
+.main-page {
+  background-color: var(--fondolanding);
+  border: 5px solid var(--herocolor);
+  border-radius: 15px;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  padding: 5vh 7vw;
+}
+
+/*título de la landing page*/
+.main-page h1 {
+  font-family: 'Lexend Mega', sans-serif;
+  font-weight: normal;
+  font-size: 4.5vw;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 5px solid var(--herocolor);
+  color: var(--herocolor);
+}
+
+/*texto del párrafo de la landing page*/
+.main-page p {
+  font-family: 'Habibi', serif;
+  font-size: 1.7rem;
+  color: var(--herocolor);
+  text-align: center;
+  margin: 7vh 3vw;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+}
+
+/*panel izquierdo*/
+.izquierda {
+  width: 40%;
+  height: 100%;
+  background-color: var(--fondopoema);
+  transition: all 1s;
+}
+.izquierda_off {
+  left: -100%;
+}
+.izquierda_on {
+  left: 0;
+}
+
+/*texto del lateral izquierdo*/
+.izquierda p {
+  font-family: 'Habibi', serif;
+  font-weight: normal;
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--textcolor);
+  margin-top: 7vh;
+}
+
+/*panel derecho*/
+.derecha {
+  width: 60%;
+  height: 100%;
+  background-image: url('./background.jpg');
+  transition: all 1s;
+}
+.derecha_off {
+  right: -100%;
+}
+.derecha_on {
+  right: 0;
+}
+
+/*formato texto  panel derecho*/
+.derecha .title {
+  text-decoration: none;
+  font-family: 'Lexend Mega', sans-serif;
+  font-size: 3rem;
+  font-weight: 200;
+  text-align: center;
+  line-height: 5rem;
+  color: var(--textcolor);
+  margin-top: 10vh;
+}
+.derecha ul {
+  list-style: none;
+  text-align: center;
+  margin: 10vh auto;
+  width: 60%;
+}
+.derecha ul li {
+  font-size: 4em;
+  font-family: 'Lexend Mega';
+  font-weight: 100;
+  margin: 1vh auto;
+}
+.derecha ul li a {
+  color: var(--textcolor);
+  text-decoration: none;
+  padding: 0.5vh 1vw;
+  transition: all 0.3s;
+}
+.derecha ul li a:hover {
+  border: 3px solid var(--textcolor);
+  background-color: var(--fondopoema);
+  border-radius: 5px;
+}

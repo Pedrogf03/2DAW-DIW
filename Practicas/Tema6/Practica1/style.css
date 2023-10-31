@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Archivo Narrow', sans-serif;
+}
+
+/* FONDO */
+body {
+  background-color: honeydew;
+}
+
+/* CONTENIDO PRINCIPAL */
+main {
+  background-color: grey;
+  border: 5px solid darkslategray;
+  width: 80%;
+  margin: 13vh auto;
+  text-align: center;
+  border-radius: 15px;
+  padding: 1vh 2vw;
+}
+
+/* TÍTULO */
+main h1 {
+  color: whitesmoke;
+  border-bottom: 5px solid whitesmoke;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 5.5em;
+}
+
+/* CONTENEDOR FLEXIBLE DE LOS DADOS */
+.contenedor_dados {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: space-evenly;
+  padding: 3vh 1vw;
+}
+
+/* DADOS */
+.dado {
+  width: 200px;
+  height: 200px;
+  border: 3px solid whitesmoke;
+  border-radius: 15px;
+  margin: 1vh 0.5vw;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: 15px;
+}
+
+/* DADO 1 */
+.dado:nth-child(1) {
+  background-color: maroon;
+  align-items: center;
+  justify-content: center;
+}
+
+/* DADO 2 */
+.dado:nth-child(2) {
+  background-color: chocolate;
+  justify-content: space-between;
+}
+.dado:nth-child(2) .punto:nth-child(1) {
+  align-self: flex-end;
+}
+
+/* DADO 3 */
+.dado:nth-child(3) {
+  background-color: darkorange;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.dado:nth-child(3) .punto:nth-child(1) {
+  align-self: flex-end;
+}
+.dado:nth-child(3) .punto:nth-child(2) {
+  align-self: center;
+}
+
+/* DADO 4 */
+.dado:nth-child(4) {
+  background-color: darkgreen;
+  justify-content: space-between;
+}
+.dado:nth-child(4) div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* DADO 5 */
+.dado:nth-child(5) {
+  background-color: navy;
+  justify-content: space-between;
+}
+.dado:nth-child(5) div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.dado:nth-child(5) .punto {
+  align-self: center;
+}
+
+/* DADO 6 */
+.dado:nth-child(6) {
+  background-color: indigo;
+  justify-content: space-between;
+}
+.dado:nth-child(6) div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* PUNTOS DE LOS DADOS */
+.punto {
+  width: 30px;
+  height: 30px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+}

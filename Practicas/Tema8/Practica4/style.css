@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* FUENTES */
+@font-face {
+  font-family: 'Pokemon Solid';
+  src: url('./fonts/Pokemon\ Solid.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Pokemon Classic';
+  src: url('./fonts/Pokemon\ Classic.ttf') format('truetype');
+}
+
+/* FONDO */
+body {
+  background-image: url('./img/fondo.jpg');
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+/* CONTENIDO PRINCIPAL */
+main {
+  margin: 5vh auto;
+  width: 95%;
+}
+
+/* CABECERA */
+header {
+  margin-bottom: 5vh;
+}
+header :is(h1, p) {
+  font-family: 'Pokemon Solid';
+  text-align: center;
+  color: whitesmoke;
+  letter-spacing: 4px;
+}
+header h1 {
+  font-size: 3em;
+}
+header p {
+  font-size: 1.7em;
+}
+
+/* CLASES PARA FILAS, COLUMNAS Y QUE LOS DIVS SEAN CUADRADOS */
+div.row2 {
+  grid-row-end: span 2;
+}
+div.column2 {
+  grid-column-end: span 2;
+}
+div.cuadrado {
+  aspect-ratio: 1;
+}
+
+/* CUADRÍCULA GRID */
+div.content {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+/* ESTILO GENERAL DE LAS TARJETAS */
+div.tarjeta div.pokemon {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: white;
+  transition: all 1s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
+
+/* PARTE FRONTAL */
+div.tarjeta div.pokemon div.img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 20px;
+  padding: 20px;
+
+  display: grid;
+  align-items: end;
+}
+div.tarjeta div.pokemon div.img p {
+  font-family: 'Pokemon Solid';
+  letter-spacing: 2px;
+  font-size: 1.5vw;
+  border: 2px solid whitesmoke;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 15px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(61, 58, 180, 1) 20%, rgba(253, 29, 231, 1) 50%, rgba(252, 69, 69, 1) 80%);
+  opacity: 0;
+  transition: all 1s;
+  position: relative;
+  overflow: hidden;
+}
+div.tarjeta div.pokemon div.img p::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 98px;
+  border-radius: 20px;
+  border: 2px solid whitesmoke;
+  background-color: rgba(253, 29, 231, 1);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  transition: all 0.1s 0.7s;
+}
+div.tarjeta div.pokemon:hover div.img p {
+  opacity: 1;
+  animation: glow 1s alternate infinite;
+}
+div.tarjeta div.pokemon:hover div.img p::after {
+  transform: translateX(600px);
+  transition: all 1s 0.5s;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 5px 5px 10px whitesmoke, -5px 5px 10px whitesmoke, 5px -5px 10px whitesmoke, -5px -5px 10px whitesmoke;
+  }
+}
+
+/* IMAGENES */
+div.content div.tarjeta:nth-child(1) div.pokemon div.img {
+  background: center / cover url('./img/regigigas.png'), radial-gradient(circle, rgba(135, 56, 190, 1) 0%, rgba(84, 19, 78, 1) 75%);
+}
+div.content div.tarjeta:nth-child(2) div.pokemon div.img {
+  background: center / cover url('./img/golett.png'), radial-gradient(circle, rgba(0, 243, 255, 1) 0%, rgba(7, 57, 145, 1) 75%);
+}
+div.content div.tarjeta:nth-child(3) div.pokemon div.img {
+  background: center / cover url('./img/wooloo.png');
+}
+div.content div.tarjeta:nth-child(4) div.pokemon div.img {
+  background: center / cover url('./img/lugia.png'), radial-gradient(circle, rgba(135, 56, 190, 1) 0%, rgba(84, 19, 78, 1) 75%);
+}
+div.content div.tarjeta:nth-child(5) div.pokemon div.img {
+  background: center / cover url('./img/totodile.png'), radial-gradient(circle, rgba(0, 243, 255, 1) 0%, rgba(7, 57, 145, 1) 75%);
+}
+div.content div.tarjeta:nth-child(6) div.pokemon div.img {
+  background: center / cover url('./img/gengar.png'), radial-gradient(circle, rgba(0, 243, 255, 1) 0%, rgba(7, 57, 145, 1) 75%);
+}
+div.content div.tarjeta:nth-child(7) {
+  grid-column-start: 5;
+}
+div.content div.tarjeta:nth-child(7) div.pokemon div.img {
+  background: center / cover url('./img/garchomp.png'), radial-gradient(circle, rgba(0, 243, 255, 1) 0%, rgba(7, 57, 145, 1) 75%);
+}
+div.content div.tarjeta:nth-child(8) {
+  grid-column-start: 3;
+}
+div.content div.tarjeta:nth-child(8) div.pokemon div.img {
+  background: center / cover url('./img/electivire.png'), radial-gradient(circle, rgba(0, 243, 255, 1) 0%, rgba(7, 57, 145, 1) 75%);
+}
+div.content div.tarjeta:nth-child(9) div.pokemon div.img {
+  background: center / cover url('./img/zacian.png'), radial-gradient(circle, rgba(135, 56, 190, 1) 0%, rgba(84, 19, 78, 1) 75%);
+}
+div.content div.tarjeta:nth-child(10) div.pokemon div.img {
+  background: center / cover url('./img/empoleon.png'), radial-gradient(circle, rgba(0, 243, 255, 1) 0%, rgba(7, 57, 145, 1) 75%);
+}
+div.content div.tarjeta:nth-child(11) div.pokemon div.img {
+  background: center / cover url('./img/zorua.png'), radial-gradient(circle, rgba(0, 243, 255, 1) 0%, rgba(7, 57, 145, 1) 75%);
+}
+div.content div.tarjeta:nth-child(12) div.pokemon div.img {
+  background: center / cover url('./img/salamence.jpg');
+}
+
+/* PARTE TRASERA */
+div.tarjeta div.pokemon div.text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 20px;
+
+  display: grid;
+  align-items: center;
+}
+div.tarjeta div.pokemon div.text p {
+  font-family: 'Pokemon Classic';
+  background-color: #ffffff80;
+  text-align: center;
+  color: black;
+  font-size: 0.7vw;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+/* IMAGENES PARTE TRASERA */
+div.content div.tarjeta div.pokemon div.text {
+  background: center / cover url('./img/pokeball.png');
+}
+div.content :is(div.tarjeta:nth-child(3), div.tarjeta:nth-child(12)) div.pokemon div.text {
+  background: center / cover url('./img/pokeball2.png');
+}
+
+/* CLASE QUE GIRA EL ELEMENTO */
+.girada {
+  transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 1000px) {
+  div.content {
+    grid-template-columns: 1fr;
+  }
+
+  div.row2 {
+    grid-row-end: auto;
+  }
+  div.column2 {
+    grid-column-end: auto;
+  }
+  div.content :is(div.tarjeta:nth-child(3), div.tarjeta:nth-child(12)) {
+    aspect-ratio: 1;
+  }
+
+  div.content div.tarjeta:nth-child(3) div.pokemon div.img {
+    background: center / cover url('./img/wooloo-sq.png');
+  }
+  div.content div.tarjeta:nth-child(7) {
+    grid-column-start: auto;
+  }
+  div.content div.tarjeta:nth-child(8) {
+    grid-column-start: auto;
+  }
+  div.content div.tarjeta:nth-child(12) div.pokemon div.img {
+    background: center / cover url('./img/salamence-sq.png');
+  }
+
+  div.tarjeta div.pokemon div.img p {
+    font-size: 4vw;
+  }
+
+  div.tarjeta div.pokemon div.img p {
+    opacity: 1;
+  }
+  div.tarjeta div.pokemon:hover div.img p {
+    animation: none;
+  }
+
+  div.tarjeta div.pokemon div.img p::after {
+    opacity: 0;
+    transition: none;
+  }
+
+  div.tarjeta div.pokemon div.text p {
+    font-size: 3.5vw;
+  }
+}
+@media screen and (max-width: 575px) {
+  header h1 {
+    font-size: 2em;
+  }
+  header p {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 1000px) and (min-width: 575px) {
+  div.content div.tarjeta:nth-child(1) div.pokemon div.img {
+    background: center / cover url('./img/regigigas.png'), radial-gradient(circle, rgba(243, 116, 147, 1) 25%, rgba(247, 210, 46, 1) 75%, rgba(84, 186, 65, 1) 90%);
+  }
+  div.content div.tarjeta:nth-child(2) div.pokemon div.img {
+    background: center / cover url('./img/golett.png'), radial-gradient(circle, rgba(247, 210, 46, 1) 24%, rgba(243, 116, 147, 1) 75%);
+  }
+  div.content div.tarjeta:nth-child(4) div.pokemon div.img {
+    background: center / cover url('./img/lugia.png'), radial-gradient(circle, rgba(243, 116, 147, 1) 25%, rgba(247, 210, 46, 1) 75%, rgba(84, 186, 65, 1) 90%);
+  }
+  div.content div.tarjeta:nth-child(5) div.pokemon div.img {
+    background: center / cover url('./img/totodile.png'), radial-gradient(circle, rgba(247, 210, 46, 1) 24%, rgba(243, 116, 147, 1) 75%);
+  }
+  div.content div.tarjeta:nth-child(6) div.pokemon div.img {
+    background: center / cover url('./img/gengar.png'), radial-gradient(circle, rgba(247, 210, 46, 1) 24%, rgba(243, 116, 147, 1) 75%);
+  }
+  div.content div.tarjeta:nth-child(7) div.pokemon div.img {
+    background: center / cover url('./img/garchomp.png'), radial-gradient(circle, rgba(247, 210, 46, 1) 24%, rgba(243, 116, 147, 1) 75%);
+  }
+  div.content div.tarjeta:nth-child(8) div.pokemon div.img {
+    background: center / cover url('./img/electivire.png'), radial-gradient(circle, rgba(247, 210, 46, 1) 24%, rgba(243, 116, 147, 1) 75%);
+  }
+  div.content div.tarjeta:nth-child(9) div.pokemon div.img {
+    background: center / cover url('./img/zacian.png'), radial-gradient(circle, rgba(243, 116, 147, 1) 25%, rgba(247, 210, 46, 1) 75%, rgba(84, 186, 65, 1) 90%);
+  }
+  div.content div.tarjeta:nth-child(10) div.pokemon div.img {
+    background: center / cover url('./img/empoleon.png'), radial-gradient(circle, rgba(247, 210, 46, 1) 24%, rgba(243, 116, 147, 1) 75%);
+  }
+  div.content div.tarjeta:nth-child(11) div.pokemon div.img {
+    background: center / cover url('./img/zorua.png'), radial-gradient(circle, rgba(247, 210, 46, 1) 24%, rgba(243, 116, 147, 1) 75%);
+  }
+}

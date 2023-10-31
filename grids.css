@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: mintcream;
+  font-family: 'Barlow', 'sans-serif';
+}
+h1 {
+  font-size: 4em;
+  text-align: center;
+  padding: 30px;
+  color: rebeccapurple;
+}
+
+.container {
+  display: grid;
+  grid-template:
+    'a a .' 2fr
+    'b c c' 2fr
+    'b . .' 1fr / 1fr 1fr 2fr;
+  grid-gap: 5px;
+  background-color: rebeccapurple;
+
+  width: 80%;
+  margin: 0 auto;
+  border: 5px solid rebeccapurple;
+}
+
+.container div {
+  background-color: lightpink;
+  color: rebeccapurple;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 3em;
+}
+.c1 {
+  grid-area: a;
+}
+.c2 {
+  grid-area: b;
+}
+.c3 {
+  grid-area: c;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    grid-template: none;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr) 2fr;
+  }
+  .c1,
+  .c2,
+  .c3 {
+    grid-area: auto;
+  }
+  .c4 {
+    grid-row: 3;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 1.3em;
+  }
+  .container {
+    grid-template: none;
+    grid-template-columns: 1fr;
+  }
+  .c1,
+  .c2,
+  .c3,
+  .c4 {
+    grid-area: auto;
+  }
+  .c6 {
+    grid-row: 4;
+  }
+}

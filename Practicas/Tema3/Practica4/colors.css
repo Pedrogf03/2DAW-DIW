@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color_texto: #5a0075;
+  --color_borde: #dd0a85;
+  --color_sombra: whitesmoke;
+
+  /* ANIMACION 1*/
+
+  /* Duracion */
+  --tiempo_anim1: 2s;
+
+  /* Colores */
+  --color1_1: rgb(24, 2, 35);
+  --color1_2: rgb(144, 28, 165);
+  --color1_3: rgb(225, 87, 187);
+  --color1_4: rgb(235, 168, 106);
+  --color1_5: rgb(233, 213, 140);
+  --color1_6: rgb(223, 178, 177);
+  --color1_7: rgb(208, 112, 166);
+  --color1_8: rgb(224, 163, 192);
+  --color1_9: rgb(255, 255, 255);
+
+  /* Delays */
+  --delay1_1: calc(var(--tiempo_anim1) / 10);
+  --delay1_2: calc(var(--delay1_1) + var(--delay1_1));
+  --delay1_3: calc(var(--delay1_2) + var(--delay1_1));
+  --delay1_4: calc(var(--delay1_3) + var(--delay1_1));
+  --delay1_5: calc(var(--delay1_4) + var(--delay1_1));
+  --delay1_6: calc(var(--delay1_5) + var(--delay1_1));
+  --delay1_7: calc(var(--delay1_6) + var(--delay1_1));
+  --delay1_8: calc(var(--delay1_7) + var(--delay1_1));
+
+  /* Animaciones */
+  --animf1: anim1 var(--tiempo_anim1) forwards;
+  --animf2: anim1 var(--tiempo_anim1) var(--delay1_1) forwards;
+  --animf3: anim1 var(--tiempo_anim1) var(--delay1_2) forwards;
+  --animf4: anim1 var(--tiempo_anim1) var(--delay1_3) forwards;
+  --animf5: anim1 var(--tiempo_anim1) var(--delay1_4) forwards;
+  --animf6: anim1 var(--tiempo_anim1) var(--delay1_5) forwards;
+  --animf7: anim1 var(--tiempo_anim1) var(--delay1_6) forwards;
+  --animf8: anim1 var(--tiempo_anim1) var(--delay1_7) forwards;
+  --animf9: anim1 var(--tiempo_anim1) var(--delay1_8) forwards;
+
+  /* ANIMACION 2 */
+
+  /* Duración */
+  --tiempo_anim2: 15s;
+
+  /* Colores */
+  --color2_1: rgb(255, 0, 0);
+  --color2_2: rgb(255, 127, 0);
+  --color2_3: rgb(255, 255, 0);
+  --color2_4: rgb(0, 255, 0);
+  --color2_5: rgb(0, 0, 255);
+  --color2_6: rgb(148, 0, 211);
+  --color2_7: rgb(255, 135, 235);
+  --color2_8: rgb(255, 255, 255);
+
+  /* Delays */
+  --delay2: (var(--tiempo_anim2) / 24);
+  --delay2_1: calc(var(--delay1_8) + var(--tiempo_anim1));
+  --delay2_2: calc(var(--delay2_1) + var(--delay2));
+  --delay2_3: calc(var(--delay2_2) + var(--delay2));
+  --delay2_4: calc(var(--delay2_3) + var(--delay2));
+  --delay2_5: calc(var(--delay2_4) + var(--delay2));
+  --delay2_6: calc(var(--delay2_5) + var(--delay2));
+  --delay2_7: calc(var(--delay2_6) + var(--delay2));
+  --delay2_8: calc(var(--delay2_7) + var(--delay2));
+  --delay2_9: calc(var(--delay2_8) + var(--delay2));
+  --delay2_10: calc(var(--delay2_9) + var(--delay2));
+  --delay2_11: calc(var(--delay2_10) + var(--delay2));
+  --delay2_12: calc(var(--delay2_11) + var(--delay2));
+  --delay2_13: calc(var(--delay2_12) + var(--delay2));
+  --delay2_14: calc(var(--delay2_13) + var(--delay2));
+  --delay2_15: calc(var(--delay2_14) + var(--delay2));
+
+  /* Animaciones */
+  --animdia1: anim2 var(--tiempo_anim2) var(--delay2_1) infinite;
+  --animdia2: anim2 var(--tiempo_anim2) var(--delay2_2) infinite;
+  --animdia3: anim2 var(--tiempo_anim2) var(--delay2_3) infinite;
+  --animdia4: anim2 var(--tiempo_anim2) var(--delay2_4) infinite;
+  --animdia5: anim2 var(--tiempo_anim2) var(--delay2_5) infinite;
+  --animdia6: anim2 var(--tiempo_anim2) var(--delay2_6) infinite;
+  --animdia7: anim2 var(--tiempo_anim2) var(--delay2_7) infinite;
+  --animdia8: anim2 var(--tiempo_anim2) var(--delay2_8) infinite;
+  --animdia9: anim2 var(--tiempo_anim2) var(--delay2_9) infinite;
+  --animdia10: anim2 var(--tiempo_anim2) var(--delay2_10) infinite;
+  --animdia11: anim2 var(--tiempo_anim2) var(--delay2_11) infinite;
+  --animdia12: anim2 var(--tiempo_anim2) var(--delay2_12) infinite;
+  --animdia13: anim2 var(--tiempo_anim2) var(--delay2_13) infinite;
+  --animdia14: anim2 var(--tiempo_anim2) var(--delay2_14) infinite;
+  --animdia15: anim2 var(--tiempo_anim2) var(--delay2_15) infinite;
+}
+
+body {
+  background-color: var(--color_texto);
+  background-image: url('./back1.jpg');
+}
+
+h1 {
+  padding: 5px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-family: 'Urbanist', sans-serif;
+  letter-spacing: 2px;
+  font-size: 2.3em;
+  text-shadow: 1px 1px 5px var(--color_sombra), -1px -1px 5px var(--color_sombra);
+  color: var(--color_texto);
+}
+
+h3 {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.2em;
+  color: var(--color_texto);
+  padding: 10px;
+}
+
+.contenedor {
+  background-color: var(--color_borde);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23cd6654'/%3E%3Cstop offset='1' stop-color='%23cd6654' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%235f2a8b'/%3E%3Cstop offset='1' stop-color='%235f2a8b' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23916c69'/%3E%3Cstop offset='1' stop-color='%23916c69' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%239A2476'/%3E%3Cstop offset='1' stop-color='%239A2476' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFA732'/%3E%3Cstop offset='1' stop-color='%23FFA732' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%232330A0'/%3E%3Cstop offset='1' stop-color='%232330A0' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+
+  width: 900px;
+  height: 950px;
+  border: 5px solid var(--color_borde);
+  border-radius: 10px;
+  margin: 10px auto 0px;
+  padding: 1vh 2vw;
+}
+
+.cuadrado {
+  display: grid;
+  grid-template-columns: repeat(8, 105px);
+  grid-template-rows: repeat(8, 105px);
+  justify-content: center;
+}
+
+.casilla {
+  border: 2px solid var(--color_texto);
+  width: 100px;
+  height: 100px;
+}
+.casilla .casilla {
+  width: 100%;
+  height: 100%;
+}
+
+/* FILAS */
+.fila1 {
+  animation: var(--animf1);
+}
+.fila2 {
+  animation: var(--animf2);
+}
+.fila3 {
+  animation: var(--animf3);
+}
+.fila4 {
+  animation: var(--animf4);
+}
+.fila5 {
+  animation: var(--animf5);
+}
+.fila6 {
+  animation: var(--animf6);
+}
+.fila7 {
+  animation: var(--animf7);
+}
+.fila8 {
+  animation: var(--animf8);
+}
+.fila9 {
+  animation: var(--animf9);
+}
+
+/* DIAGONALES */
+.diagonal1 {
+  animation: var(--animdia1);
+}
+.diagonal2 {
+  animation: var(--animdia2);
+}
+.diagonal3 {
+  animation: var(--animdia3);
+}
+.diagonal4 {
+  animation: var(--animdia4);
+}
+.diagonal5 {
+  animation: var(--animdia5);
+}
+.diagonal6 {
+  animation: var(--animdia6);
+}
+.diagonal7 {
+  animation: var(--animdia7);
+}
+.diagonal8 {
+  animation: var(--animdia8);
+}
+.diagonal9 {
+  animation: var(--animdia9);
+}
+.diagonal10 {
+  animation: var(--animdia10);
+}
+.diagonal11 {
+  animation: var(--animdia11);
+}
+.diagonal12 {
+  animation: var(--animdia12);
+}
+.diagonal13 {
+  animation: var(--animdia13);
+}
+.diagonal14 {
+  animation: var(--animdia14);
+}
+.diagonal15 {
+  animation: var(--animdia15);
+}
+
+/* ANIMACION 1 */
+@keyframes anim1 {
+  11% {
+    background-color: var(--color1_1);
+  }
+  22% {
+    background-color: var(--color1_2);
+  }
+  33% {
+    background-color: var(--color1_3);
+  }
+  44% {
+    background-color: var(--color1_4);
+  }
+  55% {
+    background-color: var(--color1_5);
+  }
+  66% {
+    background-color: var(--color1_6);
+  }
+  77% {
+    background-color: var(--color1_7);
+  }
+  88% {
+    background-color: var(--color1_8);
+  }
+  100% {
+    background-color: var(--color1_9);
+  }
+}
+
+/* ANIMACION 2 */
+@keyframes anim2 {
+  0% {
+    background-color: var(--color2_8);
+  }
+  12% {
+    background-color: var(--color2_1);
+  }
+  24% {
+    background-color: var(--color2_2);
+  }
+  36% {
+    background-color: var(--color2_3);
+  }
+  48% {
+    background-color: var(--color2_4);
+  }
+  60% {
+    background-color: var(--color2_5);
+  }
+  72% {
+    background-color: var(--color2_6);
+  }
+  84% {
+    background-color: var(--color2_7);
+  }
+  100% {
+    background-color: var(--color2_8);
+  }
+}
